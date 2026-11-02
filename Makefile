@@ -1,7 +1,6 @@
 export PATH 					:= .bin:${PATH}
 
-format: .bin/goimports .bin/ory node_modules  # formats the source code
-	.bin/ory dev headers copyright --type=open-source
+format: .bin/goimports node_modules  # formats the source code
 	.bin/goimports -w .
 	npm exec -- prettier --write .
 

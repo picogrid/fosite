@@ -1,9 +1,9 @@
 # Picogrid Fosite maintenance
 
 This fork adopts the Go JOSE v4 migration from
-[Ory Fosite PR 892](https://github.com/ory/fosite/pull/892).
-Picogrid maintains this dependency until a compatible upstream release provides
-the migration. Original authorship, license and notices remain in effect.
+[Ory Fosite PR 892](https://github.com/ory/fosite/pull/892). Picogrid maintains
+this dependency until a compatible upstream release provides the migration.
+Original authorship, license and notices remain in effect.
 
 ## Source provenance
 
@@ -12,9 +12,11 @@ the migration. Original authorship, license and notices remain in effect.
 - Reviewed PR head: `45f474113e7b581862202d327964242b9b52dd1e`
 - Maintenance branch: `emil/jose-v4`
 - Initial fork release: `v0.49.1-picogrid.1`.
+- Current maintenance release: `v0.49.1-picogrid.2`.
 - Picogrid changes: independent legacy-token regression test, patched dependency
   minimums aligned with the consuming application, and CI that tests this
-  checkout with normal and race suites on Go 1.26.10.
+  checkout with normal and race suites on Go 1.26.10. Formatting preserves
+  existing copyright owners, including Picogrid-authored additions.
 - Go JOSE dependency: official `github.com/go-jose/go-jose/v4 v4.1.6`.
 - Minimum Go toolchain: 1.26.10. This exceeds the PR's 1.24 minimum because the
   patched dependency versions require the newer toolchain.
@@ -25,19 +27,22 @@ Picogrid tag or immutable commit. Replacements must be configured in each main
 module; dependencies' replacements are not inherited. Local filesystem
 replacements are for development only and must not appear in release manifests.
 
+The Picogrid repository is public. Fetching this dependency requires no private
+module credentials or special CI authentication.
+
 ```go
-replace github.com/ory/fosite => github.com/picogrid/fosite v0.49.1-picogrid.1
+replace github.com/ory/fosite => github.com/picogrid/fosite v0.49.1-picogrid.2
 ```
 
 ## Validation
 
 The exact reviewed PR head passed the complete normal and race suites locally.
-Both suites passed again with the additional Picogrid regression test. That
-test validates a token produced by Go JOSE v3.0.5, verifies preserved claims and
+Both suites passed again with the additional Picogrid regression test. That test
+validates a token produced by Go JOSE v3.0.5, verifies preserved claims and
 tamper rejection, and independently verifies newly signed tokens using Go's
-standard library. Consumer OAuth flow tests must also pass before adoption.
-The fork's patched dependency set also passes a fresh CycloneDX schema check
-and vulnerability scan with no high/critical findings under Trivy-selected or
+standard library. Consumer OAuth flow tests must also pass before adoption. The
+fork's patched dependency set also passes a fresh CycloneDX schema check and
+vulnerability scan with no high/critical findings under Trivy-selected or
 embedded vendor ratings. These are source-inventory results, not a claim about
 every downstream deployment.
 
