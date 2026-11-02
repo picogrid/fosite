@@ -1,5 +1,9 @@
 <h1 align="center"><img src="./docs/image/banner_fosite.png" alt="ORY Fosite - Security-first OAuth2 framework"></h1>
 
+**Picogrid-maintained fork:** Go JOSE v4 migration based on upstream PR #892,
+with patched dependency minimums and additional compatibility tests. See
+[fork provenance, validation and maintenance](PICOGRID_FORK.md).
+
 [![Build Status](https://travis-ci.org/ory/fosite.svg?branch=master)](https://travis-ci.org/ory/fosite?branch=master)
 [![Coverage Status](https://coveralls.io/repos/ory/fosite/badge.svg?branch=master&service=github&foo)](https://coveralls.io/github/ory/fosite?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/ory/fosite)](https://goreportcard.com/report/ory/fosite)
